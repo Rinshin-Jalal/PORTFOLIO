@@ -1,4 +1,7 @@
 import { Component, createSignal } from "solid-js";
+import { createViewportObserver } from "@solid-primitives/intersection-observer";
+
+const [intersectionObserver] = createViewportObserver();
 
 interface Props {
   skill: {
@@ -8,18 +11,27 @@ interface Props {
     link: string;
     level: string;
     opinion: string;
+    id: number;
   };
 }
 
 const Skill: Component<Props> = ({ skill }) => {
+  const [isIntersecting, setIntersecting] = createSignal(false);
+
   return (
-    <div class="group md:relative">
+    <div
+      use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
+      class={`group md:relative hiddenSkill`}
+      classList={{
+        showSkill: isIntersecting(),
+      }}
+    >
       <img
         src={skill.img}
-        class="z-0"
+        class="z-0 relative"
         alt={`${skill.name} - ${skill.description}`}
       />
-      <div class="absolute m-auto left-0 right-0 bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block md:-m-auto md:-left-0 md:-right-0">
+      <div class="absolute m-auto left-0 right-0 bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block md:m-0">
         <a href={skill.link}>
           <img
             src={skill.img}

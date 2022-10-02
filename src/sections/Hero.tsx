@@ -1,8 +1,19 @@
-import { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
+import { createViewportObserver } from "@solid-primitives/intersection-observer";
+
+const [intersectionObserver] = createViewportObserver();
 
 const Hero: Component = () => {
+  const [isIntersecting, setIntersecting] = createSignal(false);
   return (
-    <div class="mt-28 px-10 md:mt-36 max-w-screen-xl mx-auto">
+    <div
+      use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
+      class="mt-28 px-10 md:mt-36 max-w-screen-xl mx-auto Hidden"
+      classList={{
+        Show: isIntersecting(),
+      }}
+      id="hero"
+    >
       <div>
         <h2 class="font-viga text-3xl md:text-4xl">
           Hey,&nbsp;

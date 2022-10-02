@@ -7,6 +7,7 @@ export const frameworks = [
     img: "/src/icons/node.svg",
     link: "https://nodejs.org/en/",
     level: "intermediate +",
+    id: 1,
   },
   {
     name: "React",
@@ -16,6 +17,7 @@ export const frameworks = [
     img: "/src/icons/react.svg",
     link: "https://reactjs.org/",
     level: "intermediate ++",
+    id: 2,
   },
   {
     name: "Django",
@@ -25,6 +27,7 @@ export const frameworks = [
     img: "/src/icons/django.svg",
     link: "https://www.djangoproject.com/",
     level: "intermediate",
+    id: 3,
   },
   {
     name: "Three.js",
@@ -34,6 +37,7 @@ export const frameworks = [
     img: "/src/icons/threejs.svg",
     link: "https://threejs.org/",
     level: "beginner ++",
+    id: 4,
   },
   {
     name: "Tailwind CSS",
@@ -43,6 +47,7 @@ export const frameworks = [
     img: "/src/icons/tailwind.svg",
     link: "https://tailwindcss.com/",
     level: "intermediate",
+    id: 5,
   },
   {
     name: "Next.js",
@@ -52,6 +57,7 @@ export const frameworks = [
     img: "/src/icons/nextjs.svg",
     link: "https://nextjs.org/",
     level: "intermediate ++",
+    id: 6,
   },
   {
     name: "Express.js",
@@ -61,6 +67,7 @@ export const frameworks = [
     img: "/src/icons/express.svg",
     link: "https://expressjs.com/",
     level: "intermediate +",
+    id: 7,
   },
   {
     name: "Web3.js",
@@ -70,6 +77,7 @@ export const frameworks = [
     img: "/src/icons/web3js.svg",
     link: "https://web3js.readthedocs.io/en/v1.3.4/",
     level: "beginner ++",
+    id: 8,
   },
 
   {
@@ -80,6 +88,7 @@ export const frameworks = [
     img: "/src/icons/solid.svg",
     link: "solidjs.com",
     level: "intermediate +",
+    id: 9,
   },
 
   {
@@ -90,6 +99,7 @@ export const frameworks = [
     img: "/src/icons/mongodb.svg",
     link: "https://www.mongodb.com/",
     level: "intermediate +",
+    id: 10,
   },
 ];
 
@@ -102,7 +112,9 @@ export const languages = [
     img: "/src/icons/ts.svg",
     link: "https://www.typescriptlang.org/",
     level: "intermediate +",
+    id: 1,
   },
+
   {
     name: "Python",
     description:
@@ -111,6 +123,7 @@ export const languages = [
     img: "/src/icons/python.svg",
     link: "https://www.python.org/",
     level: "intermediate ++",
+    id: 2,
   },
   {
     name: "Javascript",
@@ -120,6 +133,7 @@ export const languages = [
     img: "/src/icons/js.svg",
     link: "https://www.javascript.com/",
     level: "intermediate ++",
+    id: 3,
   },
   {
     name: "Rust",
@@ -129,6 +143,7 @@ export const languages = [
     img: "/src/icons/rust.svg",
     link: "https://www.rust-lang.org/",
     level: "beginner",
+    id: 4,
   },
   {
     name: "Solidity",
@@ -138,5 +153,6 @@ export const languages = [
     img: "/src/icons/solidity.svg",
     link: "https://docs.soliditylang.org/en/v0.8.6/",
     level: "beginner ++",
+    id: 5,
   },
 ];

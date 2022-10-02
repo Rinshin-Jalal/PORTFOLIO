@@ -1,8 +1,19 @@
-import { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
+import { createViewportObserver } from "@solid-primitives/intersection-observer";
+
+const [intersectionObserver] = createViewportObserver();
 
 const About: Component = () => {
+  const [isIntersecting, setIntersecting] = createSignal(false);
   return (
-    <div id="about" class="mt-28 px-10 lg:mt-36 max-w-screen-xl mx-auto">
+    <div
+      id="about"
+      use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
+      class="mt-28 px-10 lg:mt-36 max-w-screen-xl mx-auto Hidden"
+      classList={{
+        Show: isIntersecting(),
+      }}
+    >
       <h1 class="font-viga text-4xl md:text-5xl">About</h1>
       <div class="flex flex-col-reverse md:flex-row justify-between gap-10 md:gap-12 lg:gap-16 mx-auto mt-10 md:mt-20 max-w-5xl">
         <div class="flex-1 text-2xl font-ubuntu text-secondary md:max-w-[40%] lg:text-3xl lg:max-w-md">

@@ -59,7 +59,7 @@ const Contact: Component = () => {
     console.log(name(), email(), message());
   });
   return (
-    <div class="my-28 px-10 lg:mt-36 max-w-screen-xl mx-auto">
+    <div class="my-28 px-10 lg:mt-36 max-w-screen-xl mx-auto" id="contact">
       <h1 class="font-viga text-5xl">Contact</h1>
       <div class="flex flex-col-reverse md:flex-col lg:flex-row justify-between gap-10 lg:gap-16 mx-auto mt-10 lg:mt-20 max-w-5xl">
         <div class="flex-1 flex flex-col gap-5 text-2xl font-ubuntu font-light text-secondary  lg:text-3xl lg:max-w-md">
