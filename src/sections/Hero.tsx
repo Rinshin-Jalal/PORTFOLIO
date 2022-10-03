@@ -1,4 +1,4 @@
-import { Component, createSignal, createEffect } from "solid-js";
+import { Component, createSignal, createEffect, onMount } from "solid-js";
 import { createViewportObserver } from "@solid-primitives/intersection-observer";
 import { MousePos } from "../App";
 const [intersectionObserver] = createViewportObserver();
@@ -12,12 +12,18 @@ const angle = (x1: number, y1: number, x2: number, y2: number) => {
 };
 
 const Hero: Component = () => {
-  let finger: HTMLImageElement | ((el: HTMLImageElement) => void);
+  let finger: any;
+  let x: number;
+  let y: number;
+
   const [rotation, setRotation] = createSignal(0);
+
+  onMount(() => {
+    const rekt = finger.getBoundingClientRect();
+    x = rekt.left + rekt.width / 2 || 0;
+    y = rekt.top + rekt.height / 2 || 0;
+  });
   createEffect(() => {
-    const rekt = finger?.getBoundingClientRect();
-    const x = rekt.left + rekt.width / 2 || 0;
-    const y = rekt.top + rekt.height / 2 || 0;
     const [mousePos] = MousePos;
     setRotation(angle(x, y, mousePos().x, mousePos().y));
 

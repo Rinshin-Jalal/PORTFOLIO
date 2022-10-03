@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Rinshin_Jalal/My-PortFolio"
+		}
+	],
+	"settings": {
+		"marquee.widgets.npm-stats.packageNames": [
+			"vite-template-solid"
+		]
+	}
+}
