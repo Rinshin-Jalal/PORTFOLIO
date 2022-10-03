@@ -1,4 +1,7 @@
 import { Component, createSignal, Show, createEffect } from "solid-js";
+import { createViewportObserver } from "@solid-primitives/intersection-observer";
+
+const [intersectionObserver] = createViewportObserver();
 
 const [name, setName] = createSignal("");
 const [email, setEmail] = createSignal("");
@@ -34,13 +37,6 @@ const sendToDiscord = async (e: Event) => {
     body: JSON.stringify(body),
   });
 
-  setLoading(false);
-  setDisabled(false);
-  setName("");
-  setEmail("");
-  setMessage("");
-  setError("");
-
   if (res.status !== 204) {
     setError("Something went wrong, please try again later");
     console.log(
@@ -56,13 +52,24 @@ const Contact: Component = () => {
     } else {
       setDisabled(true);
     }
-    console.log(name(), email(), message());
   });
+  const [isIntersecting, setIntersecting] = createSignal(false);
+
   return (
-    <div class="my-28 px-10 lg:mt-36 max-w-screen-xl mx-auto" id="contact">
+    <div
+      class="my-28 px-10 lg:mt-36 max-w-screen-xl mx-auto hiddenContact"
+      classList={{
+        showContact: isIntersecting(),
+      }}
+      use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
+      id="contact"
+    >
       <h1 class="font-viga text-5xl">Contact</h1>
       <div class="flex flex-col-reverse md:flex-col lg:flex-row justify-between gap-10 lg:gap-16 mx-auto mt-10 lg:mt-20 max-w-5xl">
-        <div class="flex-1 flex flex-col gap-5 text-2xl font-ubuntu font-light text-secondary  lg:text-3xl lg:max-w-md">
+        <div
+          class="flex-1 flex flex-col gap-5 text-2xl font-ubuntu font-light text-secondary  lg:text-3xl lg:max-w-md"
+          id="left"
+        >
           <input
             type="text"
             placeholder="Full Name"
@@ -102,7 +109,10 @@ const Contact: Component = () => {
           </Show>
         </div>
 
-        <div class="flex-1 flex flex-col gap-5 md:gap-10 text-2xl font-ubuntu  lg:text-3xl lg:max-w-md">
+        <div
+          class="flex-1 flex flex-col gap-5 md:gap-10 text-2xl font-ubuntu  lg:text-3xl lg:max-w-md"
+          id="right"
+        >
           <p class=" text-secondary">
             I'm interested for freelance work, particularly Full Stack projects.
             <br />
@@ -122,22 +132,38 @@ const Contact: Component = () => {
           <div class="flex mt-7 gap-6">
             <div>
               <a href="">
-                <img src="/src/assets/github.svg" alt="Github" />
+                <img
+                  class="transition hover:rotate-12"
+                  src="/src/assets/github.svg"
+                  alt="Github"
+                />
               </a>
             </div>
             <div>
               <a href="">
-                <img src="/src/assets/twitter.svg" alt="Twitter" />
+                <img
+                  class="transition hover:rotate-12"
+                  src="/src/assets/twitter.svg"
+                  alt="Twitter"
+                />
               </a>
             </div>
             <div>
               <a href="">
-                <img src="/src/assets/linkedin.svg" alt="LinkedIn" />
+                <img
+                  class="transition hover:rotate-12"
+                  src="/src/assets/linkedin.svg"
+                  alt="LinkedIn"
+                />
               </a>
             </div>
             <div>
               <a href="">
-                <img src="/src/assets/insta.svg" alt="Instagram" />
+                <img
+                  class="transition hover:rotate-12"
+                  src="/src/assets/insta.svg"
+                  alt="Instagram"
+                />
               </a>
             </div>
           </div>

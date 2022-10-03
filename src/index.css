@@ -17,6 +17,60 @@ body {
   opacity: 1;
 }
 
+.hiddenHero {
+  opacity: 0.25;
+  transition: all 2s;
+  transform: translateY(-50px);
+}
+
+.showHero {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.hiddenAbout {
+  opacity: 0.25;
+  transition: all 2s;
+  transform: translateY(-100px);
+}
+.showAbout {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.hiddenAbout #right {
+  transform: translateX(100px);
+  transition: all 2s;
+}
+
+.showAbout #right {
+  transform: translateX(0px);
+  transition: all 2s;
+}
+
+.hiddenAbout #left {
+  transform: translateX(-100px);
+  transition: all 2s;
+}
+
+.showAbout #left {
+  transform: translateX(0px);
+  transition: all 2s;
+}
+
+.hiddenProject {
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 2s;
+}
+
+.showProject {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0px);
+}
+
 .hiddenSkill {
   filter: blur(10px);
   opacity: 0;
@@ -30,6 +84,36 @@ body {
   transform: translateX(0px);
 }
 
+.hiddenContact {
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 4s;
+}
+
+.showContact {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+}
+
+.hiddenContact #right {
+  transform: translateX(100px);
+  transition: all 8s;
+}
+
+.showContact #right {
+  transform: translateX(0px);
+}
+
+.hiddenContact #left {
+  transform: translateX(-100px);
+  transition: all 8s;
+}
+
+.showContact #left {
+  transform: translateX(0px);
+}
 /* add different delay for all elements with .showSkill class */
 .showSkill:nth-child(1) {
   transition-delay: 0.2s;
@@ -65,26 +149,17 @@ body {
 /* make the logo cover the full screen and then show other things */
 @keyframes logo {
   0% {
-    opacity: 1;
-    /* position: absolute; */
-    background: #0f0f0f;
-    width: 100vw;
-    height: 100vh;
+    filter: blur(10px);
+    opacity: 0;
   }
   100% {
     opacity: 1;
-
-    font-size: 1.875rem /* 30px */;
-
-    position: static;
+    filter: blur(0px);
   }
 }
 
 #logo {
   width: 100%;
-  font-size: 400px;
-  animation: logo 1s ease-out 0.7s forwards;
-}
 
-#logo {
+  animation: logo 1s ease-in;
 }

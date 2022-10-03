@@ -21,7 +21,7 @@ const Skill: Component<Props> = ({ skill }) => {
   return (
     <div
       use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
-      class={`group md:relative hiddenSkill`}
+      class={`group md:relative hiddenSkill z-0`}
       classList={{
         showSkill: isIntersecting(),
       }}
@@ -31,7 +31,7 @@ const Skill: Component<Props> = ({ skill }) => {
         class="z-0 relative"
         alt={`${skill.name} - ${skill.description}`}
       />
-      <div class="absolute m-auto left-0 right-0 bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block md:m-0">
+      <div class="absolute m-auto left-0 right-0  bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block rounded-3xl md:m-0">
         <a href={skill.link}>
           <img
             src={skill.img}
@@ -40,9 +40,8 @@ const Skill: Component<Props> = ({ skill }) => {
           />
           <h1 class="text-4xl font-bold mb-2">{skill.name}</h1>
         </a>
-        <h2 class="text-2xl text-gray-400 mb-2">
-          My Skill level: {skill.level}
-        </h2>
+        <p class="text-xs">My level:</p>
+        <h2 class="text-xl text-gray-400 mb-2">{skill.level}</h2>
         <p class=" text-white">{skill.description}</p>
       </div>
     </div>

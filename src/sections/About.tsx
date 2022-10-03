@@ -9,14 +9,17 @@ const About: Component = () => {
     <div
       id="about"
       use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
-      class="mt-28 px-10 lg:mt-36 max-w-screen-xl mx-auto Hidden"
+      class="mt-28 px-10 lg:mt-36 max-w-screen-xl mx-auto hiddenAbout"
       classList={{
-        Show: isIntersecting(),
+        showAbout: isIntersecting(),
       }}
     >
       <h1 class="font-viga text-4xl md:text-5xl">About</h1>
       <div class="flex flex-col-reverse md:flex-row justify-between gap-10 md:gap-12 lg:gap-16 mx-auto mt-10 md:mt-20 max-w-5xl">
-        <div class="flex-1 text-2xl font-ubuntu text-secondary md:max-w-[40%] lg:text-3xl lg:max-w-md">
+        <div
+          class="flex-1 text-2xl font-ubuntu text-secondary md:max-w-[40%] lg:text-3xl lg:max-w-md"
+          id="left"
+        >
           <p>
             I’m a freelance fullstack app & web developer from kerala,India.
             <br />
@@ -27,7 +30,7 @@ const About: Component = () => {
 
           <p class="text-sm">🦊 Hover/touch icons to know more</p>
         </div>
-        <div class="">
+        <div id="right">
           <img
             class="w-[45%] min-w-[250px] max-w-[400px] rounded-xl"
             src="/src/assets/me.png"

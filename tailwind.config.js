@@ -10,7 +10,7 @@ module.exports = {
       },
       colors: {
         primary: "#fff",
-        secondary: "rgba(168, 173, 178, 1)",
+        secondary: "#B4B4B4",
         tertiary: "#CACDD0",
       },
       gridTemplateColumns: {
