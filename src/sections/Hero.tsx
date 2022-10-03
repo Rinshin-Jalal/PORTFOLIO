@@ -1,24 +1,52 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createSignal, createEffect } from "solid-js";
 import { createViewportObserver } from "@solid-primitives/intersection-observer";
-
+import { MousePos } from "../App";
 const [intersectionObserver] = createViewportObserver();
 
+const angle = (x1: number, y1: number, x2: number, y2: number) => {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const rad = Math.atan2(dy, dx);
+  const deg = (rad * 180) / Math.PI;
+  return deg;
+};
+
 const Hero: Component = () => {
+  let finger: HTMLImageElement | ((el: HTMLImageElement) => void);
+  const [rotation, setRotation] = createSignal(0);
+  createEffect(() => {
+    const rekt = finger?.getBoundingClientRect();
+    const x = rekt.left + rekt.width / 2 || 0;
+    const y = rekt.top + rekt.height / 2 || 0;
+    const [mousePos] = MousePos;
+    setRotation(angle(x, y, mousePos().x, mousePos().y));
+    console.log(rotation());
+
+    finger?.style?.transform = `rotate(${90 + rotation()}deg)`;
+  });
+
   const [isIntersecting, setIntersecting] = createSignal(false);
+
   return (
     <div
       use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
-      class="mt-28 px-10 md:mt-36 max-w-screen-xl mx-auto Hidden"
+      class="mt-28 px-10 md:mt-36 max-w-screen-xl mx-auto hiddenHero"
       classList={{
-        Show: isIntersecting(),
+        showHero: isIntersecting(),
       }}
       id="hero"
     >
       <div>
         <h2 class="font-viga text-3xl md:text-4xl">
           Hey,&nbsp;
-          <span>
-            You.. <span>👆</span>
+          <span class="rotate-90">
+            You..
+            <img
+              ref={finger}
+              src="/src/assets/emoji.png"
+              alt="Pointing towards your cursor!!!"
+              class={`w-10 h-10 inline-block mx-2`}
+            />
           </span>
         </h2>
       </div>
@@ -51,17 +79,29 @@ const Hero: Component = () => {
         </div>
         <div>
           <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
-            <img src="/src/assets/linkedin.svg" alt="My LinkedIn Profile" />
+            <img
+              class="transition hover:rotate-12"
+              src="/src/assets/linkedin.svg"
+              alt="My LinkedIn Profile"
+            />
           </a>
         </div>
         <div>
           <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
-            <img src="/src/assets/twitter.svg" alt="My Twitter Profile" />
+            <img
+              class="transition hover:rotate-12"
+              src="/src/assets/twitter.svg"
+              alt="My Twitter Profile"
+            />
           </a>
         </div>
         <div>
           <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
-            <img src="/src/assets/insta.svg" alt="My Instagram Profile" />
+            <img
+              class="transition hover:rotate-12"
+              src="/src/assets/insta.svg"
+              alt="My Instagram Profile"
+            />
           </a>
         </div>
       </div>
