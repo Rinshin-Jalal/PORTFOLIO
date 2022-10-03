@@ -20,9 +20,8 @@ const Hero: Component = () => {
     const y = rekt.top + rekt.height / 2 || 0;
     const [mousePos] = MousePos;
     setRotation(angle(x, y, mousePos().x, mousePos().y));
-    console.log(rotation());
 
-    finger?.style?.transform = `rotate(${90 + rotation()}deg)`;
+    finger.style.transform = `rotate(${90 + rotation()}deg)`;
   });
 
   const [isIntersecting, setIntersecting] = createSignal(false);
