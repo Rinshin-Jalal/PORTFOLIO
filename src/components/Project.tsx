@@ -15,11 +15,7 @@ const Project: Component<{}> = (props) => {
       }}
     >
       <div>
-        <img
-          class=" max-w-[330px] min-w-full"
-          src="/src/assets/project.png"
-          alt=""
-        />
+        <img class=" max-w-[330px] min-w-full" src="project.png" alt="" />
       </div>
       <div class="md:max-w-[40%] lg:text-4xl lg:max-w-md flex flex-col jusify-center">
         <h1 class="font-viga text-4xl">WeTube</h1>
@@ -29,10 +25,10 @@ const Project: Component<{}> = (props) => {
 
         <div class="flex mt-7 gap-6">
           <div>
-            <img src="/src/icons/node.svg" alt="Node.JS" />
+            <img src="icons/node.svg" alt="Node.JS" />
           </div>
           <div>
-            <img src="/src/icons/django.svg" alt="Django" />
+            <img src="icons/django.svg" alt="Django" />
           </div>
         </div>
       </div>

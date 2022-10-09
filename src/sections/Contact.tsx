@@ -120,7 +120,7 @@ const Contact: Component = () => {
             If you have any further queries or concerns,Use the form to get in
             touch with me at any time.
           </p>
-          <a class="hover:text-secondary  hover:text-white text-bold ">
+          <a class="hover:text-secondary text-bold ">
             @ Karuvarakundu, Kerala, India
           </a>
           <a
@@ -131,37 +131,53 @@ const Contact: Component = () => {
           </a>
           <div class="flex mt-7 gap-6">
             <div>
-              <a href="">
+              <a
+                href="https://github.com/Rinshin-Jalal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="transition hover:rotate-12"
-                  src="/src/assets/github.svg"
+                  src="github.svg"
                   alt="Github"
                 />
               </a>
             </div>
             <div>
-              <a href="">
+              <a
+                href="https://twitter.com/0xRinshin"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="transition hover:rotate-12"
-                  src="/src/assets/twitter.svg"
+                  src="twitter.svg"
                   alt="Twitter"
                 />
               </a>
             </div>
             <div>
-              <a href="">
+              <a
+                href="https://www.linkedin.com/in/rinshin-jalal-09859021b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="transition hover:rotate-12"
-                  src="/src/assets/linkedin.svg"
+                  src="linkedin.svg"
                   alt="LinkedIn"
                 />
               </a>
             </div>
             <div>
-              <a href="">
+              <a
+                href="https://www.instagram.com/rinshin.jalal/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="transition hover:rotate-12"
-                  src="/src/assets/insta.svg"
+                  src="insta.svg"
                   alt="Instagram"
                 />
               </a>

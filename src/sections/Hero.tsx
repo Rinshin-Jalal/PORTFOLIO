@@ -31,6 +31,7 @@ const Hero: Component = () => {
   });
 
   const [isIntersecting, setIntersecting] = createSignal(false);
+  const [img, setImg] = createSignal("avatars/avatar.png");
 
   return (
     <div
@@ -48,7 +49,7 @@ const Hero: Component = () => {
             You..
             <img
               ref={finger}
-              src="/src/assets/emoji.png"
+              src="emoji.png"
               alt="Pointing towards your cursor!!!"
               class={`w-10 h-10 inline-block mx-2`}
             />
@@ -56,9 +57,22 @@ const Hero: Component = () => {
         </h2>
       </div>
       <div class="mt-24 flex flex-col md:flex-row gap-4 justify-center">
-        <div>
+        <div
+          onMouseMove={() => {
+            setImg("avatars/avatar_confused.png");
+          }}
+          onMouseLeave={() => {
+            setImg("avatars/avatar.png");
+          }}
+          onClick={() => {
+            setImg("avatars/avatar_suspicious.png");
+          }}
+          onDrag={() => {
+            setImg("avatars/avatar_angry.png");
+          }}
+        >
           <img
-            src="src/assets/avatar.png"
+            src={img()}
             class="w-28 md:w-34 lg:w-40"
             alt="Avatar of Rinshin Jalal"
           />
@@ -74,37 +88,57 @@ const Hero: Component = () => {
       </div>
       <div class="flex md:flex-col gap-6 md:items-end mt-7 md:mt-10">
         <div>
-          <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
+          <a
+            href="https://github.com/Rinshin-Jalal"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl"
+          >
             <img
               class="transition hover:rotate-12"
-              src="/src/assets/github.svg"
+              src="github.svg"
               alt="My Github Profile"
             />
           </a>
         </div>
         <div>
-          <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
+          <a
+            href="https://twitter.com/0xRinshin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl"
+          >
             <img
               class="transition hover:rotate-12"
-              src="/src/assets/linkedin.svg"
+              src="linkedin.svg"
               alt="My LinkedIn Profile"
             />
           </a>
         </div>
         <div>
-          <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
+          <a
+            href="https://www.linkedin.com/in/rinshin-jalal-09859021b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl"
+          >
             <img
               class="transition hover:rotate-12"
-              src="/src/assets/twitter.svg"
+              src="twitter.svg"
               alt="My Twitter Profile"
             />
           </a>
         </div>
         <div>
-          <a href="" target="_blank" rel="noopener noreferrer" class="text-2xl">
+          <a
+            href="https://www.instagram.com/rinshin.jalal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl"
+          >
             <img
               class="transition hover:rotate-12"
-              src="/src/assets/insta.svg"
+              src="insta.svg"
               alt="My Instagram Profile"
             />
           </a>

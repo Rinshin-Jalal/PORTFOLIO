@@ -21,14 +21,14 @@ const Skill: Component<Props> = ({ skill }) => {
   return (
     <div
       use:intersectionObserver={(e) => setIntersecting(e.isIntersecting)}
-      class={`group md:relative hiddenSkill z-0`}
+      class={`group md:relative hiddenSkill`}
       classList={{
         showSkill: isIntersecting(),
       }}
     >
       <img
         src={skill.img}
-        class="z-0 relative"
+        class="relative"
         alt={`${skill.name} - ${skill.description}`}
       />
       <div class="absolute m-auto left-0 right-0  bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block rounded-3xl md:m-0">
