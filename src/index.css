@@ -10,7 +10,7 @@ body {
 
 .Hidden {
   opacity: 0.25;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .Show {
@@ -19,7 +19,7 @@ body {
 
 .hiddenHero {
   opacity: 0.25;
-  transition: all 2s;
+  transition: all 1s;
   transform: translateY(-50px);
 }
 
@@ -30,7 +30,7 @@ body {
 
 .hiddenAbout {
   opacity: 0.25;
-  transition: all 2s;
+  transition: all 1s;
   transform: translateY(-100px);
 }
 .showAbout {
@@ -40,29 +40,29 @@ body {
 
 .hiddenAbout #right {
   transform: translateX(100px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .showAbout #right {
   transform: translateX(0px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .hiddenAbout #left {
   transform: translateX(-100px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .showAbout #left {
   transform: translateX(0px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .hiddenProject {
   filter: blur(10px);
   opacity: 0;
   transform: translateX(-50px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .showProject {
@@ -75,7 +75,7 @@ body {
   filter: blur(10px);
   opacity: 0;
   transform: translateX(-50px);
-  transition: all 2s;
+  transition: all 1s;
   z-index: 0;
 }
 
@@ -89,7 +89,7 @@ body {
   filter: blur(10px);
   opacity: 0;
   transform: translateY(50px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .showContact {
@@ -100,7 +100,7 @@ body {
 
 .hiddenContact #right {
   transform: translateX(100px);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .showContact #right {
@@ -117,10 +117,10 @@ body {
 }
 /* add different delay for all elements with .showSkill class */
 .showSkill:nth-child(1) {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 .showSkill:nth-child(2) {
-  transition-delay: 0.1s;
+  transition-delay: 0.2s;
 }
 .showSkill:nth-child(3) {
   transition-delay: 0.4s;
