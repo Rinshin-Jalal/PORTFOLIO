@@ -103,7 +103,7 @@ const Hero: Component = () => {
         </div>
         <div>
           <a
-            href="https://twitter.com/0xRinshin"
+            href="https://www.linkedin.com/in/rinshin-jalal-09859021b/"
             target="_blank"
             rel="noopener noreferrer"
             class="text-2xl"
@@ -117,7 +117,7 @@ const Hero: Component = () => {
         </div>
         <div>
           <a
-            href="https://www.linkedin.com/in/rinshin-jalal-09859021b/"
+            href="https://twitter.com/0xitsrinz"
             target="_blank"
             rel="noopener noreferrer"
             class="text-2xl"

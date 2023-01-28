@@ -33,7 +33,7 @@ const About: Component = () => {
         <div id="right">
           <img
             class="w-[45%] min-w-[250px] max-w-[400px] rounded-xl"
-            src="me.png"
+            src="me.jpg"
             alt="Real - Rinshin Jalal"
           />
         </div>
