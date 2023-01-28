@@ -31,7 +31,7 @@ const Skill: Component<Props> = ({ skill }) => {
         class="relative"
         alt={`${skill.name} - ${skill.description}`}
       />
-      <div class="absolute m-auto left-0 right-0  bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block rounded-3xl md:m-0">
+      <div class="absolute m-auto left-0 right-0 bg-black w-80 md:w-80 py-5 px-5 z-50 hidden group-hover:block rounded-3xl md:m-0">
         <a href={skill.link}>
           <img
             src={skill.img}
